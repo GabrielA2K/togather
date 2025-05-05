@@ -1,0 +1,36 @@
+
+.values-card {
+  background-color: #FFFFFF;
+  width: min(calc(100vw - 3.5rem), calc(600px - 3.5rem));
+  height: 100%;
+  border-radius: 1.2rem;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  padding: 2rem 1.5rem;
+  scroll-snap-stop: always;
+}
+
+
+.letter-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  aspect-ratio: 1;
+  background-color: var(--color);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  border-radius: 0.5rem;
+}
+.value-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1.2rem;
+}
+
+.value-description {
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+  opacity: 0.75;
+}
