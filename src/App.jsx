@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Icon } from "@iconify/react";
 import { useInView } from 'react-intersection-observer';
 
@@ -14,6 +14,24 @@ import './App.css'
 
 function App() {
 
+  const [curSection, setSection] = useState('');
+  const [heroRef, heroInView] = useInView({threshold: 0.3});
+  const [purposeRef, purposeInView] = useInView({threshold: 0.3});
+
+  useEffect(() => {
+    setSection((prev) => {
+      if (heroInView) {
+        return 'hero';
+      } else if (purposeInView) {
+        return 'purpose';
+      } else {
+        return prev;
+      }
+    })
+
+    console.log(curSection);
+  }
+  , [heroInView, purposeInView]);
 
   return (
     <>
@@ -24,10 +42,10 @@ function App() {
       <div className="blob b4"></div>
 
       {/* Web Content */}
-      <Nav />
+      <Nav section={curSection}/>
 
       {/* Hero Section */}
-      <section className='hero'>
+      <section id='hero' ref={heroRef} className={'hero'+(heroInView ? ' inview' : '')}>
         <p className='hero-title'>ToGather</p>
         <p className='hero-subtitle'><span style={{color: "#2294FF"}}>Bring</span> <span style={{color: "#8058F8"}}>People</span> <span style={{color: "#FD5959"}}>Together.</span> <span style={{color: "#FFB81F"}}>Build Something</span> <span style={{color: "#56E07B"}}>Bigger.</span></p>
         <img src={PeopleHero} alt="" srcSet="" className='hero-illustration' />
@@ -41,7 +59,7 @@ function App() {
 
 
       {/* Mision, Vision, Core Values Section */}
-      <section className='purpose'>
+      <section id='purpose' ref={purposeRef} className={'purpose'+(purposeInView ? ' inview' : '')}>
 
         <TextTag 
           text="Our Purpose"

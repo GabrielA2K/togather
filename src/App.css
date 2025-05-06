@@ -13,6 +13,23 @@
   padding-top: 5.5rem;
   color: #282828;
 }
+@media only screen and (min-width: 600px) {
+  #root::after {
+    content: '🚫 Not yet available on desktop/landscape.';
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
 /* #root:has(nav.navbar[data-enabled="true"]) {
   touch-action: none;
 } */

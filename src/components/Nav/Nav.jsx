@@ -4,8 +4,12 @@ import NavItem from "../NavItem/NavItem";
 
 import './Nav.css';
 
-export default function Nav() {
+export default function Nav(prop) {
     const [navExpanded, setNavExpanded] = useState(false)
+    const collapseNav = () => {
+        setNavExpanded(false)
+    };
+
     return (
         <nav className="navbar" data-enabled={navExpanded? "true" : "false"}>
         <div className="nav-contents">
@@ -23,13 +27,17 @@ export default function Nav() {
             title="Home"
             subtitle="Back to top"
             icon="mingcute:home-4-fill"
-            isActive={true}
+            isActive={prop.section === 'hero' ? true : false}
+            scrollToSelector="section#hero"
+            closeNav={collapseNav}
           />
           <NavItem 
             title="Why we built ToGather"
             subtitle="Our vision, mision, & core values"
             icon="mingcute:heart-hand-fill"
-            isActive={false}
+            isActive={prop.section === 'purpose' ? true : false}
+            scrollToSelector="section#purpose"
+            closeNav={collapseNav}
           />
           <NavItem 
             title="Our Activities"
