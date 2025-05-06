@@ -17,6 +17,7 @@ function App() {
   const [curSection, setSection] = useState('');
   const [heroRef, heroInView] = useInView({threshold: 0.3});
   const [purposeRef, purposeInView] = useInView({threshold: 0.3});
+  const [activitiesRef, activitiesInView] = useInView({threshold: 0.3});
 
   useEffect(() => {
     setSection((prev) => {
@@ -24,6 +25,8 @@ function App() {
         return 'hero';
       } else if (purposeInView) {
         return 'purpose';
+      } else if (activitiesInView) {
+        return 'activities';
       } else {
         return prev;
       }
@@ -31,7 +34,7 @@ function App() {
 
     console.log(curSection);
   }
-  , [heroInView, purposeInView]);
+  , [heroInView, purposeInView, activitiesInView]);
 
   return (
     <>
@@ -135,6 +138,32 @@ function App() {
           })}
           
         </div>
+
+
+
+      </section>
+
+
+
+
+      <section id='activities' ref={activitiesRef} className={'activities'+(activitiesInView ? ' inview' : '')}>
+
+        <TextTag 
+          text="What We Do"
+          color="#FF2C68" centered={true}
+        />
+
+        <p className="title">
+          Our Activities
+        </p>
+
+        <p className="f-center">
+          We help communities transition to digital-first solutions that strengthen connection, improve communication, and support better organization.
+        </p>
+        {/* <img src={PeopleHero} alt="" srcSet="" className='hero-illustration' /> */}
+        <br />
+        <br />
+        
 
 
 

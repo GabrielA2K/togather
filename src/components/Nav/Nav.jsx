@@ -43,7 +43,9 @@ export default function Nav(prop) {
             title="Our Activities"
             subtitle="Explore our activities"
             icon="mingcute:compass-fill"
-            isActive={false}
+            isActive={prop.section === 'activities' ? true : false}
+            scrollToSelector="section#activities"
+            closeNav={collapseNav}
           />
           <NavItem 
             title="How we make a Difference"

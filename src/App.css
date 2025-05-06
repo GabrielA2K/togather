@@ -4,7 +4,7 @@
   padding: 1.5rem;
   text-align: center;
   width: min(600px, 100vw);
-  height: 100%;
+  /* height: 100%; */
   position: relative;
   overflow-x: hidden;
   display: flex;
@@ -14,6 +14,9 @@
   color: #282828;
 }
 @media only screen and (min-width: 600px) {
+  #root {
+    max-height: 0;
+  }
   #root::after {
     content: '🚫 Not yet available on desktop/landscape.';
     background-color: white;
@@ -85,7 +88,7 @@ p.secondary {
 }
 
 section {
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
   width: min(calc(100vw - 3.5rem), calc(600px - 3.5rem));
   height: fit-content;
   display: flex;
@@ -308,6 +311,6 @@ section > img {
 .scrollable-x:has(.values-card.block7.visible) + .values-navigator > .text-block.block7
  {
   opacity: 1;
-  height: 1.6rem;
+  height: 1.4rem;
   border-radius: 0.3rem;
 }
