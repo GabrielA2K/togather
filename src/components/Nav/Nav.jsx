@@ -6,9 +6,7 @@ import './Nav.css';
 
 export default function Nav(prop) {
     const [navExpanded, setNavExpanded] = useState(false)
-    const collapseNav = () => {
-        setNavExpanded(false)
-    };
+    const collapseNav = () => setNavExpanded(false)
 
     return (
         <nav className="navbar" data-enabled={navExpanded? "true" : "false"}>

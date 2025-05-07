@@ -1,9 +1,17 @@
 
 import { useInView } from 'react-intersection-observer'
 import './ValuesCard.css'
+import { useEffect } from 'react'
 
 export default function ValuesCard(prop) {
     const [inViewRef, inView] = useInView({threshold: 1})
+    useEffect(() => {
+        prop.setCurrentValue(prop.id)
+        // console.log(prop.id)
+    }
+    , [inView])
+
+
     return (
 
         <div ref={inViewRef} className={"values-card block"+prop.id+(inView?' visible':'')}  style={{'--color': prop.color}}>

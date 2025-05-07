@@ -1,3 +1,7 @@
+#root { /* global variables */
+  --card-radius: 1.2rem;
+} 
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -88,7 +92,7 @@ p.secondary {
 }
 
 section {
-  margin-bottom: 5rem;
+  margin-bottom: 8rem;
   width: min(calc(100vw - 3.5rem), calc(600px - 3.5rem));
   height: fit-content;
   display: flex;
@@ -163,27 +167,6 @@ button.hero-secondary {
   right: 0;
   margin-inline: auto;
 }
-p.tag {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color);
-  margin-top: 0.5rem;
-  padding: 8px 18px;
-  border-radius: 1rem;
-  position: relative;
-}
-p.tag::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--color);
-  opacity: 0.15;
-  border-radius: 1rem;
-  z-index: -1;
-}
 
 section > .title {
   font-family: "Inter", sans-serif;
@@ -205,7 +188,7 @@ section > .title {
 .icon-card {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 1.2rem;
+  border-radius: var(--card-radius);
   padding: 1.2rem 1.5rem;
   margin-bottom: 1rem;
   /* border: var(--line-color) solid 1px; */
@@ -284,6 +267,7 @@ section > img {
   justify-content: center;
   align-items: center;
   margin-top: 0.8rem;
+  height: 1.6rem;
 }
 .values-navigator > .text-block {
   display: flex;
@@ -300,8 +284,18 @@ section > img {
   transition: 500ms;
 }
 
+/* .values-navigator > .text-block:nth-child(1) {
+  padding-left: 0.1rem;
+  border-radius: 50% 0.2rem 0.2rem 50%;
+}
 
-.scrollable-x:has(.values-card.block0.visible) + .values-navigator > .text-block.block0,
+.values-navigator > .text-block:nth-last-child(1) {
+  padding-right: 0.1rem;
+  border-radius: 0.2rem 50% 50% 0.2rem;
+} */
+
+
+/* .scrollable-x:has(.values-card.block0.visible) + .values-navigator > .text-block.block0,
 .scrollable-x:has(.values-card.block1.visible) + .values-navigator > .text-block.block1,
 .scrollable-x:has(.values-card.block2.visible) + .values-navigator > .text-block.block2,
 .scrollable-x:has(.values-card.block3.visible) + .values-navigator > .text-block.block3,
@@ -313,4 +307,12 @@ section > img {
   opacity: 1;
   height: 1.4rem;
   border-radius: 0.3rem;
+} */
+
+.text-block.focused{
+  opacity: 0.99;
+  height: 1.6rem;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
 }
+

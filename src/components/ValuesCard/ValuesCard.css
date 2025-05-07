@@ -3,11 +3,26 @@
   background-color: #FFFFFF;
   width: min(calc(100vw - 3.5rem), calc(600px - 3.5rem));
   height: 100%;
-  border-radius: 1.2rem;
+  border-radius: var(--card-radius);
   flex-shrink: 0;
   scroll-snap-align: center;
   padding: 2rem 1.5rem;
   scroll-snap-stop: always;
+  position: relative;
+  overflow-y: visible;
+}
+.values-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: var(--color); */
+  border-radius: var(--card-radius);
+  border: var(--color) dashed 1px;
+  z-index: 1;
+  opacity: 0.5;
 }
 
 
@@ -22,6 +37,12 @@
   font-weight: 700;
   color: #FFFFFF;
   border-radius: 0.5rem;
+  transition: 1000ms;
+  border: rgba(255, 255, 255, 0.75) solid 1px;
+}
+.values-card.visible .letter-block {
+  box-shadow: 0 0 2rem 0.2rem var(--color);
+  /* background-color: red; */
 }
 .value-name {
   font-weight: 600;

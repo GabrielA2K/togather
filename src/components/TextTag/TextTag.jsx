@@ -1,5 +1,4 @@
-
-
+import './TextTag.css'
 
 export default function TextTag(prop) {
 

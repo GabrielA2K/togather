@@ -3,6 +3,7 @@ import { Icon } from '@iconify/react';
 import './NavItem.css';
 
 export default function NavItem(prop) {
+    //change to arrow function
     function scrollToSelector(selector, offset) {
       const element = document.querySelector(selector);
       if (element) {
