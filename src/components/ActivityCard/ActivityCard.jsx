@@ -1,9 +1,13 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
+import { useInView } from 'react-intersection-observer';
 
 import './ActivityCard.css';
 
 export default function ActivityCard(prop) {
   
+
+    const [valueRef, valueInView] = useInView({threshold: 0.2});
+
     const subcontentMap =
         prop.subcontent.map((item, index) => {
             return (
@@ -20,7 +24,7 @@ export default function ActivityCard(prop) {
 
 
     return (
-        <div className="activities-card" style={{'--color': prop.color}}>
+        <div ref={valueRef} className={"activities-card from-left"+(valueInView?' visible':'')} style={{'--color': prop.color}}>
           <header>
             <div className="activity-title-container">
               <div className="icon-container">

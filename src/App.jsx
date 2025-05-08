@@ -22,6 +22,10 @@ function App() {
   const [purposeRef, purposeInView] = useInView({threshold: 0.3});
   const [activitiesRef, activitiesInView] = useInView({threshold: 0.3});
 
+  const [missionRef, missionInView] = useInView({threshold: 0.2});
+  const [visionRef, visionInView] = useInView({threshold: 0.2});
+
+
   useEffect(() => {
     setSection((prev) => {
       switch(true) {
@@ -119,7 +123,7 @@ function App() {
         <br />
         <br />
         
-        <div className="icon-card" style={{'--color': '#2294FF'}}>
+        <div ref={missionRef} className={"icon-card mission "+(missionInView?' visible':'')} style={{'--color': '#2294FF'}}>
           <div className="icon-card-icon">
             <Icon icon="mingcute:target-line" width={24} color='#FFFFFF'/>
           </div>
@@ -129,7 +133,7 @@ function App() {
           </div>
         </div>
 
-        <div className="icon-card" style={{'--color': '#FFB81F'}}>
+        <div ref={visionRef} className={"icon-card vision "+(visionInView?' visible':'')} style={{'--color': '#FFB81F'}}>
           <div className="icon-card-icon">
             <Icon icon="mingcute:bulb-line" width={24} color='#FFFFFF'/>
           </div>
@@ -139,10 +143,18 @@ function App() {
           </div>
         </div>
         <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
 
 
         <TextTag 
-          text="Our Purpose"
+          text="Our Principles"
           color="#2294FF" centered={true}
         />
 
@@ -165,6 +177,8 @@ function App() {
 
 
       </section>
+      <br />
+      <br />
 
 
 

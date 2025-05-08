@@ -186,14 +186,43 @@ section > .title {
 }
 
 .icon-card {
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.75);
+  position: relative;
+  width: 72%;
+  background-color: rgba(255, 255, 255, 1);
   border-radius: var(--card-radius);
   padding: 1.2rem 1.5rem;
   margin-bottom: 1rem;
-  /* border: var(--line-color) solid 1px; */
+  border: var(--color) solid 1px;
   /* box-shadow: 0 0 2rem -1.2rem var(--line-color); */
 }
+.icon-card.mission::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #06691F;
+  border-radius: var(--card-radius);
+  z-index: -1;
+  opacity: 0.1;
+  transform: translate(1.2rem,0.8rem) rotate(-4deg);
+}
+.icon-card.vision::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #06691F;
+  border-radius: var(--card-radius);
+  z-index: -1;
+  opacity: 0.1;
+  transform: translate(-1rem,0.8rem) rotate(-4deg);
+}
+
+
 
 .icon-card-icon {
   background-color: var(--color);
@@ -227,6 +256,14 @@ section > .title {
   line-height: 1.2rem;
   /* color: #282828; */
   margin-bottom: 0.5rem;
+}
+
+.icon-card.mission > .icon-card-text {
+  margin-bottom: 2rem;
+}
+.icon-card.vision {
+  margin-top: -3.5rem;
+  margin-left: 28%;
 }
 
 section > img {
@@ -314,5 +351,26 @@ section > img {
   height: 1.6rem;
   border-radius: 0.3rem;
   font-size: 0.9rem;
+}
+
+
+.from-left {
+  opacity: 0;
+  transform: scale(0.7) translateX(-50%);
+  transition: transform 600ms cubic-bezier(.47,1.64,.1,.9), opacity 600ms 50ms;
+}
+.from-left.visible {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+}
+
+.from-right {
+  opacity: 0;
+  transform: scale(0.7) translateX(50%);
+  transition: transform 600ms cubic-bezier(.47,1.64,.1,.9), opacity 600ms 50ms;
+}
+.from-right.visible {
+  opacity: 1;
+  transform: scale(1) translateX(0);
 }
 
