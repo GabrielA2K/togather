@@ -374,3 +374,75 @@ section > img {
   transform: scale(1) translateX(0);
 }
 
+
+
+.demo-card {
+  background-color: #EFF6FF;
+  width: 100%;
+  border-radius: var(--card-radius);
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-inline: 2rem;
+  padding-block: 2.5rem;
+}
+.demo-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--card-radius);
+  border: var(--color) solid 1px;
+  z-index: 0;
+  opacity: 0.5;
+}
+.demo-title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+.demo-subtitle {
+  opacity: 0.75;
+  margin-top: 0.5rem;
+}
+
+.demo-card > button {
+  background-color: var(--color);
+  margin-top: 1.5rem;
+  width: 100%;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.gather-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.gather-blocks {
+  background-color: var(--color);
+  aspect-ratio: 1;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  transform: scale(0.8) translateY(-1.6rem);
+  opacity: 0;
+  transition: all 500ms cubic-bezier(.47,1.64,.1,.9) calc(100ms + var(--delay));
+}
+
+.gather-container.visible .gather-blocks {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+

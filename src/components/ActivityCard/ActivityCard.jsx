@@ -24,7 +24,7 @@ export default function ActivityCard(prop) {
 
 
     return (
-        <div ref={valueRef} className={"activities-card from-left"+(valueInView?' visible':'')} style={{'--color': prop.color}}>
+        <div ref={valueRef} key={prop.id} className={"activities-card from-left"+(valueInView?' visible':'')} style={{'--color': prop.color}}>
           <header>
             <div className="activity-title-container">
               <div className="icon-container">

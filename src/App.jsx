@@ -8,6 +8,7 @@ import ActivityCard from './components/ActivityCard/ActivityCard';
 import TextTag from './components/TextTag/TextTag';
 
 import { CoreValues } from './information/CoreValues';
+import { OurActivities } from './information/OurActivities';
 
 import PeopleHero from './assets/images/community_2.png'
 import LetterBlocks from './assets/images/letterblocks.png'
@@ -24,6 +25,8 @@ function App() {
 
   const [missionRef, missionInView] = useInView({threshold: 0.2});
   const [visionRef, visionInView] = useInView({threshold: 0.2});
+  const [demoRef, demoInView] = useInView({threshold: 0.2});
+  const [gatherRef, gatherInView] = useInView({threshold: 1});
 
 
   useEffect(() => {
@@ -52,10 +55,11 @@ function App() {
   }
 
   const valuesCardMap = 
-    CoreValues.map((value, key) => {
+    CoreValues.map((value, index) => {
       return (
         <ValuesCard
-          id={key}
+          key={index}
+          id={index}
           title={value.title}
           color={value.color}
           description={value.description}
@@ -64,10 +68,25 @@ function App() {
       )
     })
 
+  const ourActivitiesMap = 
+    OurActivities.map((act, index) => {
+      return (
+        <ActivityCard
+          key={index}
+          id={index}
+          title={act.title}
+          description={act.description}
+          color={act.color}
+          icon={act.icon}
+          subcontent={act.subcontent}
+        />
+      )
+    })
+
   const valuesBlockScrollMap = 
     CoreValues.map((value, key) => {
       return (
-        <p className={'text-block block'+key+" "+(curValue === key ? ' focused' : '')} style={{'--color': value.color}}
+        <p key={key} className={'text-block block'+key+" "+(curValue === key ? ' focused' : '')} style={{'--color': value.color}}
           onClick={()=>{
             document.querySelector('.values-card.block'+key).scrollIntoView({
               behavior: 'smooth',
@@ -159,9 +178,27 @@ function App() {
         />
 
         <p className="title">Our Core Values</p>
-        <img src={LetterBlocks} alt="" srcSet="" className='purpose-illustration' onClick={()=>{
+        <div ref={gatherRef} className={"gather-container"+(gatherInView?' visible':'')}>
+        {
+          CoreValues.map((value, key) => {
+            return (
+              <p key={key} className={'gather-blocks block'+key} style={{'--color': value.color, '--delay': key*100+'ms'}}
+                onClick={()=>{
+                  document.querySelector('.values-card.block'+key).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                    inline: 'nearest'
+                  })
+                }}
+              >{value.title.charAt(0)}</p>
+            )
+          })
+        }
+        </div>
+        
+        {/* <img src={LetterBlocks} alt="" srcSet="" className='purpose-illustration' onClick={()=>{
           
-        }}/>
+        }}/> */}
         <p className="f-center">Our mission, vision, and values guide everything we do.</p>
         <br />
         <br />
@@ -200,110 +237,14 @@ function App() {
         {/* <img src={PeopleHero} alt="" srcSet="" className='hero-illustration' /> */}
         <br />
         <br />
-        <ActivityCard
-          color="#40A3FF"
-          icon='mingcute:mortarboard-fill'
-          title='Empowering Schools through Digitalization'
-          description='We empower schools through digitalization, connecting the organization seamlessly.'
-          subcontent={[
-            {
-              icon: 'mingcute:group-2-line',
-              text: 'Subgroup creation for students, events, or classes'
-            },
-            {
-              icon: 'mingcute:comment-2-line',
-              text: 'Seamless parent-teacher communication'
-            },
-            {
-              icon: 'mingcute:camcorder-line',
-              text: 'Video conferencing features for meetings'
-            }
-          ]}
-        />
-
-        <ActivityCard
-          color="#A186F3"
-          icon='mingcute:badge-fill'
-          title='Modernizing Local Institutions'
-          description='We support local institutions in embracing digital tools to simplify everyday processes.'
-          subcontent={[
-            {
-              icon: 'mingcute:badge-line',
-              text: 'Digital student IDs'
-            },
-            {
-              icon: 'mingcute:calendar-line',
-              text: 'Personalized event calendars'
-            },
-            {
-              icon: 'mingcute:notification-line',
-              text: 'Class schedules and updates'
-            }
-          ]}
-        />
-        
-        <ActivityCard
-          color="#66E086"
-          icon='mingcute:group-3-fill'
-          title='Supporting Societies & Organizations'
-          description='We help groups and societies manage events and prioritize goals.'
-          subcontent={[
-            {
-              icon: 'mingcute:calendar-line',
-              text: 'Digital event creation and management'
-            },
-            {
-              icon: 'mingcute:group-2-line',
-              text: 'Collaborative calendar planning'
-            },
-            {
-              icon: 'mingcute:message-2-line',
-              text: 'Group messaging features'
-            }
-          ]}
-        />
-
-        <ActivityCard
-          color="#FD5959"
-          icon='mingcute:plugin-2-fill'
-          title='Connecting Local Communities'
-          description='We enable municipalities to stay connected and informed.'
-          subcontent={[
-            {
-              icon: 'mingcute:horn-line',
-              text: 'Centralized announcements'
-            },
-            {
-              icon: 'mingcute:idcard-line',
-              text: 'Digital ID issuance'
-            },
-            {
-              icon: 'mingcute:heart-hand-line',
-              text: 'Requesting assistance and engaging residents'
-            }
-          ]}
-        />
-
-        <ActivityCard
-          color="#FFB760"
-          icon='mingcute:plugin-2-fill'
-          title='Custom Solutions for Faith Communities'
-          description='We work with faith-based groups to create digital platforms that support outreach and organization.'
-          subcontent={[
-            {
-              icon: 'mingcute:calendar-line',
-              text: 'Event scheduling'
-            },
-            {
-              icon: 'mingcute:horn-line',
-              text: 'Announcements and livestreams'
-            },
-            {
-              icon: 'mingcute:heart-hand-line',
-              text: 'Community support features'
-            }
-          ]}
-        />
+        {ourActivitiesMap}
+        <br />
+        <div ref={demoRef} className={"demo-card from-left"+(demoInView?' visible':'')} style={{'--color': '#40A3FF'}}>
+          <Icon icon={'mingcute:calendar-time-add-line'} width={56} color='#40A3FF' />
+          <p className="demo-title">Book a Demo With Us</p>
+          <p className="demo-subtitle">Schedule a personalised demonstration of our platform and services.</p>
+          <button className='demo-book'>Book Your Demo</button>
+        </div>
         
       </section>
 
