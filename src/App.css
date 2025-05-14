@@ -5,7 +5,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
   text-align: center;
   width: min(600px, 100vw);
   /* height: 100%; */
@@ -92,13 +92,58 @@ p.secondary {
 }
 
 section {
-  margin-bottom: 8rem;
+  padding-block: 1rem;
+  margin-block: 2rem;
+  /* margin-bottom: 8rem; */
   width: min(calc(100vw - 3.5rem), calc(600px - 3.5rem));
+  width: 100%;
+  padding-inline: 1.75rem;
   height: fit-content;
   display: flex;
   flex-direction: column ;
   align-items: flex-start;
 }
+
+section#hero {
+  padding-block: 0;
+  margin-block-start: 0;
+  margin-block-end: 2rem;
+}
+
+section#purpose,
+section#activities,
+section#impact,
+section#donation {
+  /* background-color: #F5FAFF; */
+  /* z-index: -1; */
+  background: linear-gradient(180deg, #F5FAFF 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+section#purpose::before,
+section#activities::before,
+section#impact::before,
+section#donation::before {
+  content: "";
+  position: absolute;
+  margin-left: -1.75rem;
+  margin-top: -3rem;
+  height: 2rem;
+  width: 100vw;
+  background: url(./assets/images/top-section-mobile.svg) no-repeat center;
+  z-index: 0;
+}
+
+/* section#purpose::after {
+  content: "";
+  position: absolute;
+  margin-left: -1.75rem;
+  height: 2rem;
+  width: 100vw;
+  background: url(./assets/images/bottom-section-mobile.svg) no-repeat center;
+  background-color: red;
+  z-index: 1;
+  top: 0;
+} */
 
 /* section.hero {
   
@@ -398,9 +443,10 @@ section > img {
   opacity: 0.5;
 }
 .demo-title {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.4rem;
   margin-top: 1rem;
+  color: var(--color);
 }
 .demo-subtitle {
   opacity: 0.75;
@@ -446,3 +492,150 @@ section > img {
   opacity: 1;
 }
 
+.news-container {
+  /* background-color: red; */
+  width: 100vw;
+  height: fit-content;
+  margin-top: 2rem;
+}
+
+.card-news {
+  background-color: #ffffff;
+  min-width: 100%;
+  /* height: 30rem; */
+  border-radius: var(--card-radius);
+  border: #E4E4E4 solid 1px;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+.news-header {
+  background-color: var(--color);
+  color: #ffffff;
+  width: 100%;
+  /* min-height: 10rem; */
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+  padding: 1.2rem 1rem;
+  text-align: left;
+}
+
+.title-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.title-container .title-icon {
+  flex-shrink: 0;
+  /* min-width: 1rem;
+  aspect-ratio: 1; */
+}
+.title-container p.title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.news-header p.description {
+  font-weight: 400;
+  font-size: 0.75rem;
+  margin-top: 0.8rem;
+  /* opacity: 0.85; */
+}
+
+.news-body {
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.news-body .news-content {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.news-body .news-poster {
+  /* background-color: red; */
+  width: 100%;
+  aspect-ratio: 5/3;
+  border-radius: 0.5rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.news-body img {
+  /* background-color: red; */
+  width: 100%;
+  aspect-ratio: 5/3;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  /* background-size: cover;
+  background-position: center; */
+}
+
+.news-body p.news-heading {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.news-body p.news-preview {
+  font-weight: 400;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+.news-body button.news-expand {
+  background-color: transparent;
+  color: var(--color);
+  font-weight: 400;
+  font-size: 0.85rem;
+  padding-inline-start: 0;
+  padding-block: 0.2rem;
+  width: fit-content;
+  display: flex;
+  gap: 0.2rem;
+  /* opacity: 0.3; */
+}
+
+.card-news .news-date {
+  font-weight: 400;
+  font-size: 0.7rem;
+  opacity: 0.5;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+
+
+
+.donation-tabs {
+  /* background-color: red; */
+  margin-top: 1.4rem;
+  height: 2.6rem;
+  width: 100vw;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.donation-tab {
+  background-color: #e3e7ef;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 1.5rem;
+  border-radius: 0.8rem;
+  flex-shrink: 0;
+}
+
+.donation-tab.active {
+  color: #ffffff;
+  background-color: #66E086;
+}

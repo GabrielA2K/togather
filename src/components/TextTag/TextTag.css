@@ -17,5 +17,5 @@ p.tag {
     background-color: var(--color);
     opacity: 0.15;
     border-radius: 1rem;
-    z-index: -1;
+    z-index: 0;
   }
