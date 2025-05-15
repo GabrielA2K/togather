@@ -204,7 +204,7 @@ function App() {
         <br />
         <br />
 
-        <div className="scrollable-x no-scrollbar">
+        <div className="core-values scrollable-x no-scrollbar">
           {valuesCardMap}
           
         </div>
@@ -238,14 +238,16 @@ function App() {
         {/* <img src={PeopleHero} alt="" srcSet="" className='hero-illustration' /> */}
         <br />
         <br />
-        {ourActivitiesMap}
-        <br />
-        <div ref={demoRef} className={"demo-card from-left"+(demoInView?' visible':'')} style={{'--color': '#40A3FF'}}>
-          <Icon icon={'mingcute:calendar-time-add-line'} width={56} color='#40A3FF' />
-          <p className="demo-title">Book a Demo With Us</p>
-          <p className="demo-subtitle">Schedule a personalised demonstration of our platform and services.</p>
-          <button className='demo-book'>Book Your Demo</button>
+        <div className="activities-container">
+          {ourActivitiesMap}
+          <div ref={demoRef} className={"demo-card from-left"+(demoInView?' visible':'')} style={{'--color': '#40A3FF'}}>
+            <Icon icon={'mingcute:calendar-time-add-line'} width={56} color='#40A3FF' />
+            <p className="demo-title">Book a Demo With Us</p>
+            <p className="demo-subtitle">Schedule a personalised demonstration of our platform and services.</p>
+            <button className='demo-book'>Book Your Demo</button>
+          </div>
         </div>
+        
         
       </section>
 
@@ -287,10 +289,10 @@ function App() {
                 <p className="news-preview">
                   From a Vision to a Movement: How One Year of Digital Empowerment Sparked Growth, Innovation, and Community Impact
                 </p>
-                {/* <button className="news-expand">
+                <button className="news-expand">
                   Read more
                   <Icon icon="mingcute:arrow-right-line" width={16} className='expand-icon' />
-                </button> */}
+                </button>
               </div>
               
             </div>
@@ -322,10 +324,10 @@ function App() {
                 <p className="news-preview">
                   Today, we celebrated the OJT graduates from Holy Cross College and DHVSU, despite the rainy weather, marking the start of their promising careers.
                 </p>
-                {/* <button className="news-expand">
+                <button className="news-expand">
                   Read more
                   <Icon icon="mingcute:arrow-right-line" width={16} className='expand-icon' />
-                </button> */}
+                </button>
               </div>
               
             </div>
@@ -494,7 +496,7 @@ function App() {
                 icon="mingcute:camcorder-line"
                 body="Support remote coordination and meetings."
               />
-              
+          
             </div>
             
           </div>
