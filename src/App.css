@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 5.5rem;
+  /* padding-top: 5.5rem; */
   color: #282828;
 }
 /* @media only screen and (min-width: 600px) {
@@ -68,6 +68,7 @@ p.secondary {
   width: 60vw;
   height: 60vh;
   background-color: #3172FE;
+  transition-delay: 100ms;
 }
 .b2 {
   top: 20vh;
@@ -75,6 +76,7 @@ p.secondary {
   width: 45vw;
   height: 50vh;
   background-color: #FB1268;
+  transition-delay: 300ms;
 }
 .b3 {
   bottom: -20vh;
@@ -83,6 +85,7 @@ p.secondary {
   height: 30vh;
   background-color: #00D0FF;
   opacity: 0.4;
+  transition-delay: 500ms;
 }
 
 .b4 {
@@ -91,6 +94,7 @@ p.secondary {
   width: 45vw;
   height: 50vh;
   background-color: #16CDFF;
+  transition-delay: 700ms;
 }
 
 div.blob {
@@ -121,6 +125,10 @@ section#hero {
   padding-block: 0;
   margin-block-start: 0;
   margin-block-end: 2rem;
+  background: url(./assets/images/top-hero.svg) no-repeat center;
+  background-position: top ;
+  background-size: 230%;
+  padding-top: 6rem;
 }
 
 section#purpose,
@@ -656,11 +664,12 @@ section > img {
   padding-inline: 1.5rem;
   border-radius: 0.8rem;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .donation-tab.active {
   color: #ffffff;
-  background-color: #66E086;
+  background-color: var(--color);
 }
 
 
@@ -771,6 +780,12 @@ section > img {
   section {
     /* padding-inline: max(calc(100vw - 80vw), 4rem); */
     padding-inline: min(10vw, 10rem);
+  }
+
+  section#hero {
+    background-position: top;
+    background-size: contain;
+    padding-top: 20rem;
   }
   
   .scrollable-x {

@@ -13,6 +13,7 @@ import { CoreValues } from './information/CoreValues';
 import { OurActivities } from './information/OurActivities';
 
 import PeopleHero from './assets/images/community_2.png'
+import TopHero from './assets/images/top-hero.svg'
 import News1 from './assets/images/news1-poster.png'
 import TopSectionMobile from './assets/images/top-section-mobile.svg'
 import BottomSectionMobile from './assets/images/bottom-section-mobile.svg'
@@ -26,6 +27,8 @@ function App() {
   const [heroRef, heroInView] = useInView({threshold: 0.3});
   const [purposeRef, purposeInView] = useInView({threshold: 0.3});
   const [activitiesRef, activitiesInView] = useInView({threshold: 0.3});
+  const [communityFundRef, communityFundInView] = useInView({threshold: 0.2});
+  const [featureSponsorRef, featureSponsorInView] = useInView({threshold: 1});
 
   const [missionRef, missionInView] = useInView({threshold: 0.2});
   const [visionRef, visionInView] = useInView({threshold: 0.2});
@@ -359,14 +362,31 @@ function App() {
           Support our platform through various donation and sponsorship opportunities
         </p>
         <div className="donation-tabs scrollable-x no-scrollbar">
-          <div className="donation-tab active">Community Fund</div>
-          <div className="donation-tab">Feature Sponsorship</div>
-          <div className="donation-tab">Membership Packages</div>
-          <div className="donation-tab">Donor & Sponsor Program</div>
+          <div className={"donation-tab"+(communityFundInView ? ' active' : '')} style={{'--color': '#66E086'}}
+            onClick={()=>{
+              document.getElementById('community-fund-donate-section').scrollIntoView({
+              behavior: 'smooth',
+              block: 'nearest',
+              inline: 'nearest'
+            })}}>
+              Community Fund
+          </div>
+          <div className={"donation-tab"+(featureSponsorInView ? ' active' : '')} style={{'--color': '#FD5959'}}
+            onClick={()=>{
+              document.getElementById('feature-sponsor-donate-section').scrollIntoView({
+              behavior: 'smooth',
+              block: 'nearest',
+              inline: 'nearest'
+            })}}>
+              Feature Sponsorship
+          </div>
+
+          {/* <div className="donation-tab">Membership Packages</div>
+          <div className="donation-tab">Donor & Sponsor Program</div> */}
         </div>
         
         <div className="all-donate-container scrollable-x no-scrollbar">
-          <div className="donate-main-container" style={{'--color': '#66E086'}}>
+          <div ref={communityFundRef} id="community-fund-donate-section" className="donate-main-container" style={{'--color': '#66E086'}}>
             <div className="donate-main-card">
               <div className="donate-card-title">
                 <Icon icon="mingcute:heart-line" width={24} className='title-icon' />
@@ -434,8 +454,8 @@ function App() {
           </div>
 
 
-          <div className="donate-main-container" style={{'--color': '#FD5959'}}>
-            <div className="donate-main-card">
+          <div id="feature-sponsor-donate-section" className="donate-main-container" style={{'--color': '#FD5959'}}>
+            <div ref={featureSponsorRef} className="donate-main-card">
               <div className="donate-card-title">
                 <Icon icon="mingcute:gift-line" width={24} className='title-icon' />
                 <p className="title">Feature Sponsorship</p> 
