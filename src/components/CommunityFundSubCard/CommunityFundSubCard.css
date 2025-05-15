@@ -1,0 +1,48 @@
+
+.community-fund.donate-subcard {
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: var(--card-radius);
+    border: #E4E4E4 solid 1px;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    /* height: 20rem; */
+    margin-top: 0.8rem;
+    padding: 1.2rem;
+  }
+  
+  .community-fund .donate-subcard-title {
+    display: flex;
+    /* background-color: red; */
+    font-weight: 600;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: left;
+  }
+  
+  .community-fund .donate-subcard-title .icon-wrapper {
+    min-width: 3rem;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    color: #16A34A;
+    background-color: #ECFDF5;
+  }
+  
+  .community-fund .donate-subcard-title p.title {
+    font-size: 1rem;
+  }
+  
+
+  
+  .community-fund.donate-subcard p.body {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+    text-align: left;
+    margin-bottom: 0.7rem;
+  }
+

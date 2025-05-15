@@ -94,7 +94,7 @@ p.secondary {
 section {
   padding-block: 1rem;
   margin-block: 2rem;
-  /* margin-bottom: 8rem; */
+  margin-bottom: 0rem;
   width: min(calc(100vw - 3.5rem), calc(600px - 3.5rem));
   width: 100%;
   padding-inline: 1.75rem;
@@ -119,7 +119,16 @@ section#donation {
   background: linear-gradient(180deg, #F5FAFF 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-section#purpose::before,
+.divider {
+  background: url(./assets/images/top-section-mobile.svg) no-repeat center;
+  width: 100%;
+  height: 10rem;
+  background-size: 100%;
+  /* background-color: red; */
+  background-position: bottom;
+  margin-bottom: -2.4rem;
+}
+/* section#purpose::before,
 section#activities::before,
 section#impact::before,
 section#donation::before {
@@ -127,11 +136,12 @@ section#donation::before {
   position: absolute;
   margin-left: -1.75rem;
   margin-top: -3rem;
-  height: 2rem;
+  height: 8.9vw;
   width: 100vw;
   background: url(./assets/images/top-section-mobile.svg) no-repeat center;
+  background-size: contain;
   z-index: 0;
-}
+} */
 
 /* section#purpose::after {
   content: "";
@@ -638,4 +648,79 @@ section > img {
 .donation-tab.active {
   color: #ffffff;
   background-color: #66E086;
+}
+
+
+.donate-main-card {
+  background-color: #ffffff;
+  width: 100%;
+  border-radius: var(--card-radius);
+  border: #E4E4E4 solid 1px;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  /* height: 20rem; */
+  margin-top: 1.5rem;
+  padding: 1.4rem;
+  gap : 1rem;
+}
+
+.donate-card-title {
+  display: flex;
+  /* background-color: red; */
+  font-weight: 600;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.donate-card-title p.title {
+  font-size: 1.2rem;
+}
+
+.donate-card-body {
+  text-align: left;
+  font-size: 0.8rem;
+  /* margin-top: 0.5rem; */
+  opacity: 0.8;
+}
+
+.donate-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+.donate-actions button {
+
+  font-size: 0.9rem;
+}
+.donate-actions button.donate-primary {
+  background-color: var(--color);
+  color: #ffffff;
+  font-weight: 500;
+  padding-block: 0.85rem;
+}
+.donate-actions button.donate-secondary {
+  background-color: transparent;
+  color: #282828;
+  border: #C9C9C9 solid 1px;
+  font-weight: 500;
+  padding-block: 0.85rem;
+}
+
+.all-donate-container {
+  height: fit-content;
+}
+
+.donate-main-container {
+  min-width: 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.donate-subcards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }

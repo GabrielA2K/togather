@@ -6,6 +6,8 @@ import Nav from './components/Nav/Nav';
 import ValuesCard from './components/ValuesCard/ValuesCard';
 import ActivityCard from './components/ActivityCard/ActivityCard';
 import TextTag from './components/TextTag/TextTag';
+import CommunityFundSubCard from './components/CommunityFundSubCard/CommunityFundSubCard';
+import FeatureSponsorSubCard from './components/FeatureSponsorSubCard/FeatureSponsorSubCard';
 
 import { CoreValues } from './information/CoreValues';
 import { OurActivities } from './information/OurActivities';
@@ -126,6 +128,7 @@ function App() {
 
 
       {/* Mision, Vision, Core Values Section */}
+      <div className="divider"></div>
       <section id='purpose' ref={purposeRef} className={'purpose'+(purposeInView ? ' inview' : '')}>
 
         <TextTag 
@@ -217,7 +220,7 @@ function App() {
 
 
 
-
+      <div className="divider"></div>
       <section id='activities' ref={activitiesRef} className={'activities'+(activitiesInView ? ' inview' : '')}>
 
         <TextTag 
@@ -246,6 +249,8 @@ function App() {
         
       </section>
 
+
+      <div className="divider"></div>
       <section id='impact' className={'impact'}>
 
         <TextTag 
@@ -282,10 +287,10 @@ function App() {
                 <p className="news-preview">
                   From a Vision to a Movement: How One Year of Digital Empowerment Sparked Growth, Innovation, and Community Impact
                 </p>
-                <button className="news-expand">
+                {/* <button className="news-expand">
                   Read more
                   <Icon icon="mingcute:arrow-right-line" width={16} className='expand-icon' />
-                </button>
+                </button> */}
               </div>
               
             </div>
@@ -317,10 +322,10 @@ function App() {
                 <p className="news-preview">
                   Today, we celebrated the OJT graduates from Holy Cross College and DHVSU, despite the rainy weather, marking the start of their promising careers.
                 </p>
-                <button className="news-expand">
+                {/* <button className="news-expand">
                   Read more
                   <Icon icon="mingcute:arrow-right-line" width={16} className='expand-icon' />
-                </button>
+                </button> */}
               </div>
               
             </div>
@@ -336,7 +341,7 @@ function App() {
 
 
 
-
+      <div className="divider"></div>
       <section id='donation' className={'impact'}>
 
         <TextTag 
@@ -357,6 +362,146 @@ function App() {
           <div className="donation-tab">Membership Packages</div>
           <div className="donation-tab">Donor & Sponsor Program</div>
         </div>
+        
+        <div className="all-donate-container scrollable-x no-scrollbar">
+          <div className="donate-main-container" style={{'--color': '#66E086'}}>
+            <div className="donate-main-card">
+              <div className="donate-card-title">
+                <Icon icon="mingcute:heart-line" width={24} className='title-icon' />
+                <p className="title">Community Fund</p> 
+              </div>
+
+              <p className="donate-card-body">
+                Support the heart of inclusion by contributing to our Community Fund. This initiative ensures underfunded organisations gain access to vital tools and resources on our platform, empowering them to thrive. Every donation directly expands accessibility, bridging the gap for communities in need.
+              </p>
+              <div className="donate-actions">
+                <button className="donate-primary">
+                  Donate to Community Fund
+                </button>
+                <button className="donate-secondary">
+                  Suggest a Feature
+                </button>
+              </div>
+            </div>
+
+
+
+            <div className="donate-subcards">
+              
+              <CommunityFundSubCard
+                title="Dashboard"
+                icon="mingcute:chart-horizontal-line"
+                body="Centralised access to updates and resources tailored to underfunded organisations."
+              />
+
+              <CommunityFundSubCard
+                title="Publication and Announcements"
+                icon="mingcute:horn-line"
+                body="Publish updates and announcements to keep the community informed."
+              />
+
+              <CommunityFundSubCard
+                title="Feedback and Collaboration Channels"
+                icon="mingcute:message-2-line"
+                body="Gather feedback to continuously improve support."
+              />
+
+              <CommunityFundSubCard
+                title="Safeguarding and Accountability Tools"
+                icon="mingcute:shield-shape-line"
+                body="Ensure safety and privacy for all users."
+              />
+
+              <CommunityFundSubCard
+                title="Event and Activity Management"
+                icon="mingcute:time-line"
+                body="Plan and manage events to engage and support communities."
+              />
+
+              <CommunityFundSubCard
+                title="Calendar Syncing"
+                icon="mingcute:refresh-4-ai-line"
+                body="Sync calendars to keep track of events and activities."
+              />
+              
+
+              
+
+            </div>
+            
+          </div>
+
+
+          <div className="donate-main-container" style={{'--color': '#FD5959'}}>
+            <div className="donate-main-card">
+              <div className="donate-card-title">
+                <Icon icon="mingcute:gift-line" width={24} className='title-icon' />
+                <p className="title">Feature Sponsorship</p> 
+              </div>
+
+              <p className="donate-card-body">
+                Make a tangible impact by sponsoring specific platform features tailored for targeted communities. Whether it's advanced safeguarding tools, profile management systems, or accessibility enhancements, your sponsorship directly addresses the unique needs of the communities we serve.
+              </p>
+              <div className="donate-actions">
+                <button className="donate-primary">
+                  Donate to Community Fund
+                </button>
+              </div>
+            </div>
+
+
+
+            <div className="donate-subcards">
+              
+              <FeatureSponsorSubCard
+                title="User Profiles and Personalisation"
+                icon="mingcute:settings-4-line"
+                body="Customisable profiles to manage personal details and preferences."
+              />
+
+              <FeatureSponsorSubCard
+                title="Booking and Reservations"
+                icon="mingcute:calendar-time-add-line"
+                body="Manage bookings for facilities and services."
+              />
+
+              <FeatureSponsorSubCard
+                title="Group and Team Management"
+                icon="mingcute:group-3-line"
+                body="Efficiently manage groups and teams within funded organisations."
+              />
+
+              <FeatureSponsorSubCard
+                title="Private Messaging"
+                icon="mingcute:comment-2-line"
+                body="Secure communication channels for direct interactions."
+              />
+
+              <FeatureSponsorSubCard
+                title="Collaboration and Coordination Tools"
+                icon="mingcute:plugin-2-line"
+                body="Enhance coordination and collaboration within the community."
+              />
+
+              <FeatureSponsorSubCard
+                title="Training and Knowledge Sharing"
+                icon="mingcute:book-6-line"
+                body="Provide essential training resources and guides."
+              />
+
+              <FeatureSponsorSubCard
+                title="Virtual Meetings and Communication"
+                icon="mingcute:camcorder-line"
+                body="Support remote coordination and meetings."
+              />
+              
+            </div>
+            
+          </div>
+        </div>
+        
+        
+
           <br />
           <br />
           <br />
