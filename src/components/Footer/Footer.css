@@ -1,0 +1,37 @@
+.footer{
+    width: 100%;
+    background-color: #0F172A;
+    color: #ffffff;
+}
+.footer-content{
+    display: flex;
+    text-align: left;
+    column-gap: 10.5rem;
+}
+
+.footer-label{
+    font-weight: 600;
+    line-height: 20px;
+    font-size: 1rem;
+}
+.footer-description{
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.79);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    font-weight: 300;
+}
+.footer-legal-links a{
+    display: block;
+    margin-top: 0.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.79);
+}
+.footer-contact{
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.79);
+    font-weight: 300;
+}
