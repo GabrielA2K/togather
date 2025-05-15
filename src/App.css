@@ -3,7 +3,7 @@
 } 
 
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   /* padding: 1.5rem; */
   text-align: center;
@@ -91,6 +91,17 @@ p.secondary {
   width: 45vw;
   height: 50vh;
   background-color: #16CDFF;
+}
+
+div.blob {
+  /* background-color: #ffffff; */
+  opacity: 0.0;
+  transition: all 1000ms;
+}
+
+div.blob:has(~section .gather-container.visible) {
+  opacity: 0.4;
+  
 }
 
 section {
@@ -756,8 +767,13 @@ section > img {
 @media only screen and (min-width: 600px) {
   #root {
     width: 100vw;
+    /* padding: 0; */
   }
 
+  section {
+    padding-inline: max(calc(100vw - 1280px), 4rem);
+  }
+  
   .scrollable-x {
     width: 100%;
     margin-left: 0;
@@ -842,12 +858,12 @@ section > img {
     margin: 0;
   } 
 
-  section {
+  /* section {
     background: transparent!important;
   }
   .divider {
     background: transparent;
-  }
+  } */
 
 
   .donation-tabs {
