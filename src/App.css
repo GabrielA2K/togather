@@ -762,16 +762,15 @@ section > img {
 
 
 
-
-
 @media only screen and (min-width: 600px) {
   #root {
-    width: 100vw;
+    width: 100%;
     /* padding: 0; */
   }
 
   section {
-    padding-inline: max(calc(100vw - 1280px), 4rem);
+    /* padding-inline: max(calc(100vw - 80vw), 4rem); */
+    padding-inline: min(10vw, 10rem);
   }
   
   .scrollable-x {
@@ -896,4 +895,11 @@ section > img {
 
   
   
+}
+
+
+@media only screen and (min-width: 1600px) {
+  section {
+    padding-inline: 20vw;
+  }
 }
