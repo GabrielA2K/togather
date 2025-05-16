@@ -33,7 +33,7 @@ export default function Nav(prop) {
             <NavItem 
               title="Why we built ToGather"
               subtitle="Our vision, mision, & core values"
-              icon="mingcute:heart-hand-fill"
+              icon="mingcute:target-fill"
               isActive={prop.section === 'purpose' ? true : false}
               scrollToSelector="section#purpose"
               closeNav={collapseNav}
@@ -47,22 +47,28 @@ export default function Nav(prop) {
               closeNav={collapseNav}
             />
             <NavItem 
+              title="Book a Demo"
+              subtitle="Learn more about the features we offer"
+              icon="mingcute:mail-open-fill"
+              isActive={prop.section === 'demo-card' ? true : false}
+              scrollToSelector="#description42"
+              closeNav={collapseNav}
+            />
+            <NavItem 
               title="How we make a Difference"
               subtitle="Learn how we can make a difference"
               icon="mingcute:hand-heart-fill"
-              isActive={false}
+              isActive={prop.section === 'impact' ? true : false}
+              scrollToSelector="section#impact"
+              closeNav={collapseNav}
             />
             <NavItem 
-              title="Request a Demo"
-              subtitle="Learn more about the features we offer"
-              icon="mingcute:mail-open-fill"
-              isActive={false}
-            />
-            <NavItem 
-              title="Members & Partners"
-              subtitle="Meet our community and partners"
-              icon="mingcute:group-fill"
-              isActive={false}
+              title="Donations & Sponsorships"
+              subtitle="Support our mission"
+              icon="mingcute:heart-hand-fill"
+              isActive={prop.section === 'donation' ? true : false}
+              scrollToSelector="section#donation"
+              closeNav={collapseNav}
             />
           </div>
         </nav>

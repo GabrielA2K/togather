@@ -15,7 +15,7 @@ export default function ActivityCard(prop) {
                     <div className="icon-container">
                         <Icon icon={item.icon} width={18} color='var(--color)' />
                     </div>
-                    <p>{item.text}</p>
+                    <p id={'description'+prop.id+index}>{item.text}</p>
                 </div>
             )
         })

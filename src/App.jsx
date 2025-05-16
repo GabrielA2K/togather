@@ -27,8 +27,11 @@ function App() {
   const [curValue, setValue] = useState(0);
 
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
-  const [purposeRef, purposeInView] = useInView({ threshold: 0.3 });
+  const [purposeRef, purposeInView] = useInView({ threshold: 0.2 });
   const [activitiesRef, activitiesInView] = useInView({ threshold: 0.3 });
+  const [impactRef, impactInView] = useInView({ threshold: 0.3 });
+  const [donationRef, donationInView] = useInView({ threshold: 0.3 });
+
   const [communityFundRef, communityFundInView] = useInView({ threshold: 0.2 });
   const [featureSponsorRef, featureSponsorInView] = useInView({ threshold: 1 });
 
@@ -46,11 +49,17 @@ function App() {
           return "purpose";
         case activitiesInView:
           return "activities";
+        case demoInView:
+          return "demo-card";
+        case impactInView:
+          return "impact";
+        case donationInView:
+          return "donation";
         default:
           return prev;
       }
     });
-  }, [heroInView, purposeInView, activitiesInView]);
+  }, [heroInView, purposeInView, activitiesInView, demoInView, impactInView, donationInView]);
 
   const setCurrentValue = (value) => {
     setValue(value);
@@ -156,7 +165,15 @@ function App() {
                   inline: "nearest",
                 });
             }}>Support Us</button>
-              <button className="hero-secondary">About Us</button>
+              <button className="hero-secondary" onClick={() => {
+              document
+                .getElementById("purpose")
+                .scrollIntoView({
+                  behavior: "smooth",
+                  block: "nearest",
+                  inline: "nearest",
+                });
+            }}>About Us</button>
             </div>
             
           </div>
@@ -370,6 +387,7 @@ function App() {
         <div className="activities-container">
           {ourActivitiesMap}
           <div
+            id="demo-card"
             ref={demoRef}
             className={"demo-card from-left" + (demoInView ? " visible" : "")}
             style={{ "--color": "#40A3FF" }}
@@ -390,7 +408,7 @@ function App() {
       </section>
 
       <div className="divider"></div>
-      <section id="impact" className={"impact"}>
+      <section ref={impactRef} id="impact" className={"impact"}>
         <TextTag text="Our Impact" color="#FFB760" centered={true} />
 
         <p className="title">How We Make A Difference</p>
@@ -494,7 +512,7 @@ function App() {
       </section>
 
       <div className="divider"></div>
-      <section id="donation" className={"impact"}>
+      <section ref={donationRef} id="donation" className={"impact"}>
         <TextTag text="Support Us" color="#40A3FF" centered={true} />
 
         <p className="title">Donations and Sponsorships</p>
