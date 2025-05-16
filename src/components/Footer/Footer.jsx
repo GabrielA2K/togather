@@ -4,26 +4,26 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <footer className="footer">
-      <section>
+      <section id="footer-top">
         <div className="footer-content">
           <div className="footer-item">
-            <p className="footer-label">To Gather</p>
+            <p className="footer-label">ToGather</p>
             <p className="footer-description">
               A Non-Profit Dedicated to <br /> Empowering Communities
             </p>
             <a href="#" style={{ marginRight: "0.5rem" }}>
               <Icon
                 icon="mingcute:linkedin-line"
-                width={32}
-                height={32}
+                width={24}
+                height={24}
                 color="rgba(255, 255, 255, 0.79)"
               />
             </a>
             <a href="#">
               <Icon
                 icon="mingcute:facebook-line"
-                width={32}
-                height={32}
+                width={24}
+                height={24}
                 color="rgba(255, 255, 255, 0.79)"
               />
             </a>
@@ -48,7 +48,7 @@ export default function Footer() {
                   gap: "0.2rem",
                 }}
               >
-                <Icon icon="mingcute:location-line" width={24} height={24} />
+                <Icon icon="mingcute:location-line" width={18} height={18} />
                 <p>85 Great Portland Street, London, England, W1W 7LT</p>
               </div>
               <div
@@ -59,12 +59,20 @@ export default function Footer() {
                   gap: "0.2rem",
                 }}
               >
-                <Icon icon="mingcute:mail-line" width={24} height={24} />
+                <Icon icon="mingcute:mail-line" width={18} height={18} />
                 <p>info@togather.org.uk</p>
               </div>
             </p>
           </div>
         </div>
+      </section>
+      <section id="footer-bottom">
+        <p className="footer-copyright">
+          © 2025 ToGather. All rights reserved.
+        </p>
+        <p className="footer-copyright">
+          Developed by A2K Group Corporation © 2025
+        </p>
       </section>
     </footer>
   );
