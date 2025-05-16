@@ -43,6 +43,15 @@ p.nav-title {
   font-style: normal;
   font-size: 1.3rem;
 }
+.nav-wordmark {
+  width: 9rem;
+  height: 100%;
+  background: url("../../assets/images/togather-wordmark.svg") no-repeat center;
+  background-size: contain;
+  background-position-x: 0;
+  margin-left: -0.5rem;
+  /* background-color: red; */
+}
 .nav-menu {
   position: relative;
   height: 3rem;

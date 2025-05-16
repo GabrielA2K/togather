@@ -8,17 +8,19 @@ import ActivityCard from "./components/ActivityCard/ActivityCard";
 import TextTag from "./components/TextTag/TextTag";
 import CommunityFundSubCard from "./components/CommunityFundSubCard/CommunityFundSubCard";
 import FeatureSponsorSubCard from "./components/FeatureSponsorSubCard/FeatureSponsorSubCard";
+import Footer from "./components/Footer/Footer";
 
 import { CoreValues } from "./information/CoreValues";
 import { OurActivities } from "./information/OurActivities";
 
 import PeopleHero from "./assets/images/community_2.png";
+import HeroImage from "./assets/images/hero-image.svg";
 import TopHero from "./assets/images/top-hero.svg";
 import News1 from "./assets/images/news1-poster.png";
 import TopSectionMobile from "./assets/images/top-section-mobile.svg";
 import BottomSectionMobile from "./assets/images/bottom-section-mobile.svg";
 import "./App.css";
-import Footer from "./components/Footer/Footer";
+
 
 function App() {
   const [curSection, setSection] = useState("");
@@ -119,27 +121,48 @@ function App() {
         ref={heroRef}
         className={"hero" + (heroInView ? " inview" : "")}
       >
-        <p className="hero-title">ToGather</p>
-        <p className="hero-subtitle">
-          <span style={{ color: "#2294FF" }}>Bring</span>{" "}
-          <span style={{ color: "#8058F8" }}>People</span>{" "}
-          <span style={{ color: "#FD5959" }}>Together.</span>{" "}
-          <span style={{ color: "#FFB81F" }}>Build Something</span>{" "}
-          <span style={{ color: "#56E07B" }}>Bigger.</span>
-        </p>
-        <img
-          src={PeopleHero}
-          alt="Cartoon image of group of people."
-          srcSet=""
-          className="hero-illustration"
-        />
-        <p>
-          A non-profit dedicated to empowering communities, your donation helps
-          support programs that heal, empower, and unite.
-        </p>
-        <br />
-        <button className="hero-primary">Support Us</button>
-        <button className="hero-secondary">About Us</button>
+        <div className="hero-container">
+          <div className="hero-heading">
+            <p className="hero-title">ToGather</p>
+            <p className="hero-subtitle">
+              <span style={{ color: "#2294FF" }}>Bring People</span>{" "}
+              <span style={{ color: "#8058F8" }}>Together.</span>{" "}
+              <span style={{ color: "#56E07B" }}>Build</span>{" "}
+              <span style={{ color: "#FD5959" }}>Something</span>{" "}
+              <span style={{ color: "#FFB81F" }}>Impactful.</span>
+            </p>
+          </div>
+          
+          <img
+            src={HeroImage}
+            alt="Cartoon image of group of people."
+            srcSet=""
+            className="hero-illustration"
+          />
+
+          <div className="hero-foot">
+            <p>
+              A non-profit dedicated to empowering communities, your donation helps
+              support programs that heal, empower, and unite.
+            </p>
+            <br />
+            <div className="hero-actions">
+              <button className="hero-primary" onClick={() => {
+              document
+                .getElementById("donation")
+                .scrollIntoView({
+                  behavior: "smooth",
+                  block: "nearest",
+                  inline: "nearest",
+                });
+            }}>Support Us</button>
+              <button className="hero-secondary">About Us</button>
+            </div>
+            
+          </div>
+        </div>
+        
+        
       </section>
 
       {/* Mision, Vision, Core Values Section */}
@@ -160,7 +183,7 @@ function App() {
         <br />
         <br />
 
-        <div
+        {/* <div
           ref={missionRef}
           className={"icon-card mission " + (missionInView ? " visible" : "")}
           style={{ "--color": "#2294FF" }}
@@ -197,7 +220,83 @@ function App() {
               collaborate, grow, and serve more effectively.
             </p>
           </div>
+        </div> */}
+
+        <div className="mission-vision-container">
+
+          <div className="mv-card mission-card">
+            <div className="icon-card-icon">
+              <Icon icon="mingcute:target-line" width={24} color="#FFFFFF" />
+            </div>
+            <div className="icon-card-text">
+              <p className="title">Mission</p>
+              <p className="secondary">
+                A non-profit organisation dedicated to supporting charities and community interest organisations, particularly faith communities, educational institutions, and local groups. We achieve this by providing a bespoke Digital Community Engagement Platform.
+              </p>
+            </div>
+          </div>
+
+          <div className="mv-card vision-card">
+            <div className="icon-card-icon">
+              <Icon icon="mingcute:bulb-line" width={24} color="#FFFFFF" />
+            </div>
+            <div className="icon-card-text">
+              <p className="title">Vision</p>
+              <p className="secondary">
+                To create a globally connected and inclusive community, empowered by secure and accessible digital tools.
+              </p>
+            </div>
+          </div>
+
         </div>
+
+        <div className="mv-card sub-mission-card">
+          <p className="title">
+            Our platform is designed to
+          </p>
+          <div className="mission-list">
+            <div className="mission-item" style={{ "--color": "#40A3FF" }}>
+              <div className="icon-wrapper">
+                <Icon icon="mingcute:link-2-line" width={24} />
+              </div>
+              <p className="heading">Strengthen Connections</p>
+              <p className="description">Foster collaboration within communities</p>
+            </div>
+
+            <div className="mission-item" style={{ "--color": "#A186F3" }}>
+              <div className="icon-wrapper">
+                <Icon icon="mingcute:chart-bar-line" width={24} />
+              </div>
+              <p className="heading">Streamline Workflows</p>
+              <p className="description">Improve overall organizational efficiency</p>
+            </div>
+
+            <div className="mission-item" style={{ "--color": "#66E086" }}>
+              <div className="icon-wrapper">
+                <Icon icon="mingcute:shield-shape-line" width={24} />
+              </div>
+              <p className="heading">Uphold Safeguarding</p>
+              <p className="description">Ensure accountability through digital tools</p>
+            </div>
+
+            <div className="mission-item" style={{ "--color": "#FD5959" }}>
+              <div className="icon-wrapper">
+                <Icon icon="mingcute:group-line" width={24} />
+              </div>
+              <p className="heading">Ensure Accessibility</p>
+              <p className="description">Create inclusivity for diverse communities</p>
+            </div>
+
+            <div className="mission-item" style={{ "--color": "#FFB760" }}>
+              <div className="icon-wrapper">
+                <Icon icon="mingcute:bulb-2-line" width={24} />
+              </div>
+              <p className="heading">Enable Sustainability</p>
+              <p className="description">Through adaptive training & technology</p>
+            </div>
+          </div>
+        </div>
+
         <br />
         <br />
         <br />
@@ -535,7 +634,7 @@ function App() {
               </p>
               <div className="donate-actions">
                 <button className="donate-primary">
-                  Donate to Community Fund
+                  Suggest a Feature
                 </button>
               </div>
             </div>
