@@ -199,7 +199,7 @@ section > img {
 }
 
 .scrollable-x {
-  height: 14rem;
+  min-height: 2rem;
   width: 100vw;
   /* background-color: red; */
   margin-left: -1.75rem;
