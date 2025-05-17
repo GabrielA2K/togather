@@ -1,0 +1,64 @@
+
+.demo-card {
+    background-color: #EFF6FF;
+    width: 100%;
+    border-radius: var(--card-radius);
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-inline: 2rem;
+    padding-block: 2.5rem;
+  }
+  .demo-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--card-radius);
+    border: var(--color) solid 1px;
+    z-index: 0;
+    opacity: 0.5;
+  }
+  .demo-title {
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    color: var(--color);
+  }
+  .demo-subtitle {
+    opacity: 0.75;
+    margin-top: 0.5rem;
+  }
+  
+  .demo-card > button {
+    background-color: var(--color);
+    margin-top: 1.5rem;
+    width: 100%;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  .activities-container {
+    width: 100%;
+    /* background-color: red; */
+  }
+
+
+  @media only screen and (min-width: 600px) {
+
+    .activities-container {
+        /* display: flex;
+        gap: 0 1rem;
+        flex-wrap: wrap;
+        justify-content: center; */
+        padding-inline: 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));
+        gap: 0 1rem;
+    }
+    
+    /* .activities-container > div {
+        
+    } */
+  }

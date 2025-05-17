@@ -28,7 +28,7 @@ export const OurActivities = [
     subcontent: [
         {
           icon: 'mingcute:badge-line',
-          text: 'Digital student IDs'
+          text: 'Digital IDs'
         },
         {
           icon: 'mingcute:calendar-line',

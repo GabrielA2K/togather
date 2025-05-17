@@ -1,0 +1,126 @@
+
+.donation-tabs {
+    /* background-color: red; */
+    margin-top: 1.4rem;
+    height: 2.6rem;
+    width: 100vw;
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .donation-tab {
+    background-color: #e3e7ef;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 1.5rem;
+    border-radius: 0.8rem;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  
+  .donation-tab.active {
+    color: #ffffff;
+    background-color: var(--color);
+  }
+  
+  
+  .donate-main-card {
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: var(--card-radius);
+    border: #e4e4e474 solid 1px;
+    /* box-shadow: 0px 0px 2px 1px, rgba(0, 0, 0, 0.1) 0px 4px 30px -4px; */
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    /* height: 20rem; */
+    margin-top: 1.5rem;
+    padding: 1.4rem;
+    gap : 1rem;
+  }
+  
+  .donate-card-title {
+    display: flex;
+    /* background-color: red; */
+    font-weight: 600;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .donate-card-title p.title {
+    font-size: 1.2rem;
+  }
+  
+  .donate-card-body {
+    text-align: left;
+    font-size: 0.8rem;
+    /* margin-top: 0.5rem; */
+    opacity: 0.8;
+  }
+  
+  .donate-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+  .donate-actions button {
+  
+    font-size: 0.9rem;
+  }
+  .donate-actions button.donate-primary {
+    background-color: var(--color);
+    color: #ffffff;
+    font-weight: 500;
+    padding-block: 0.85rem;
+  }
+  .donate-actions button.donate-secondary {
+    background-color: transparent;
+    color: #282828;
+    border: #c9c9c96b solid 1px;
+    font-weight: 500;
+    padding-block: 0.85rem;
+  }
+  
+  .all-donate-container {
+    height: fit-content;
+  }
+  
+  .donate-main-container {
+    min-width: 100%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+  
+  .donate-subcards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media only screen and (min-width: 600px) {
+
+    .donation-tabs {
+        justify-content: center;
+      }
+    
+      .donate-actions {
+        flex-direction: row;
+      }
+    
+      .donate-subcards {
+        /* background-color: red; */
+        /* flex-direction: row;
+        gap: 0rem 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: stretch; */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));
+        gap: 0 1rem;
+      }
+  }
