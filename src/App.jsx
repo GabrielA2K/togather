@@ -110,6 +110,7 @@ function App() {
       <div className="blob b3"></div>
       <div className="blob b4"></div>
       {/* End of Viewport Background Gradient Blur */}
+      {/* End of Viewport Background Gradient Blur */}
 
       <Nav section={curSection} />
       <Hero ref={heroRef} inView={heroInView} />
@@ -121,7 +122,16 @@ function App() {
         demoInView={demoInView}
       />
       {/* <Impact ref={impactRef} inView={impactInView} /> */}
+      <Activities
+        ref={activitiesRef}
+        inView={activitiesInView}
+        demoRef={demoRef}
+        demoInView={demoInView}
+      />
+      {/* <Impact ref={impactRef} inView={impactInView} /> */}
       <Donation ref={donationRef} inView={donationInView} />
+      <br />
+      <br />
       <br />
       <br />
       <Footer />
