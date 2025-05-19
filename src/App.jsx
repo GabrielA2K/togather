@@ -87,7 +87,7 @@ function App() {
     setLoadState('loading'); // Start loading
     try {
       console.log(data);
-      const response = await axios.post("http://localhost:3000/api/v1/email", {
+      const response = await axios.post("https://togather-api.onrender.com:3000/api/v1/email", {
         full_name: data.full_name,
         email: data.email,
         phone_number: data.phone_number,

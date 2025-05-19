@@ -120,7 +120,7 @@ export default function Donation(prop) {
                 >
                   Donate to Community Fund
                 </button>
-                <button className="donate-secondary">Suggest a Feature</button>
+                {/* <button className="donate-secondary">Suggest a Feature</button> */}
               </div>
             </div>
             <div className="donate-subcards">{communityFeaturesMap}</div>
@@ -149,7 +149,7 @@ export default function Donation(prop) {
                 needs of the communities we serve.
               </p>
               <div className="donate-actions">
-                <button className="donate-primary">Suggest a Feature</button>
+                {/* <button className="donate-primary">Suggest a Feature</button> */}
               </div>
             </div>
 

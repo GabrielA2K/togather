@@ -394,6 +394,7 @@ div.cancel {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 button.submit {
