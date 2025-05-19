@@ -161,8 +161,9 @@ section#hero {
         /* flex-grow: 0; */
         width: auto;
         padding-inline: 4rem;
-        border-radius: 0.8rem;
+        border-radius: 2rem;
         font-size: 1rem;
         margin: 0;
       }
   }
+

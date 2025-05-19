@@ -62,7 +62,9 @@ export default function Activities(prop) {
                     Schedule a personalised demonstration of our platform and
                     services.
                 </p>
-                <button className="demo-book">Book Your Demo</button>
+                <button className="demo-book" onClick={()=>{
+                    document.querySelector('.modal-overlay').classList.remove('hidden')
+                    }}>Book Your Demo</button>
                 </div>
             </div>
             </section>

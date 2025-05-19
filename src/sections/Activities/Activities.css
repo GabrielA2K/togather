@@ -7,8 +7,10 @@
     margin-bottom: 1.5rem;
     padding-inline: 2rem;
     padding-block: 2.5rem;
+    border-radius: var(--card-radius);
+    border: #40a3ff74 solid 1px;
   }
-  .demo-card::before {
+  /* .demo-card::before {
     content: "";
     position: absolute;
     top: 0;
@@ -19,7 +21,7 @@
     border: var(--color) solid 1px;
     z-index: 0;
     opacity: 0.5;
-  }
+  } */
   .demo-title {
     font-weight: 600;
     font-size: 1.4rem;
@@ -42,6 +44,10 @@
   .activities-container {
     width: 100%;
     /* background-color: red; */
+  }
+
+  button.demo-book {
+    z-index: 99;
   }
 
 

@@ -8,6 +8,7 @@
   border-radius: 1rem;
   display: flex;
   gap: 0.5rem;
+  cursor: pointer;
 } 
 .nav-item-icon-container {
   height: 2.8rem;
@@ -50,4 +51,87 @@
 }
 .nav-item[data-active="true"] .nav-item-text > p:nth-child(1) {
   color: #2294FF;
+}
+
+@media only screen and (min-width: 860px) {
+  
+  .nav-item {
+    background-color: transparent;
+    height: 4rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem;
+    border-radius: 1rem;
+    display: flex;
+    gap: 0rem;
+  }
+  .nav-item-icon-container {
+    height: unset;
+    width: unset;
+    border-radius: 0.8rem;
+    background-color: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-item-icon {
+    color: #282828;
+  }
+  
+  .nav-item-text {
+    text-align: left;
+  }
+
+  .nav-item-text > p:nth-child(1) {
+    display: none;
+  }
+  
+  .nav-item-text > p:nth-child(2) {
+    display: none;
+  }
+  
+  
+  .nav-item[data-active="true"] {
+    /* background-color: rgba(255, 44, 104, 0.1); */
+    /* box-shadow: 0 0 12px rgba(255, 44, 104, 0.5); */
+    background-color: unset;
+  }
+  .nav-item[data-active="true"] > .nav-item-icon-container {
+    /* background-color: rgba(255, 44, 104, 0.2); */
+    background-color: unset;
+  }
+  .nav-item[data-active="true"] .nav-item-icon {
+    color: #2294FF;
+  }
+  .nav-item[data-active="true"] .nav-item-text > p:nth-child(1) {
+    color: #2294FF;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .nav-item-text > p:nth-child(1) {
+    width: unset;
+    font-weight: 500;
+    font-size: 0.7rem;
+    display: block;
+  }
+
+  .nav-item {
+    background-color: transparent;
+    height: 4rem;
+    width: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem;
+    border-radius: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    /* background-color: red; */
+  } 
+  
 }
