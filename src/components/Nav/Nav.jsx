@@ -25,15 +25,16 @@ export default function Nav(prop) {
             <NavItem 
               title="Home"
               subtitle="Back to top"
-              icon="mingcute:home-4-fill"
+              icon={"mingcute:home-4-"+(prop.section === 'hero' ? 'fill' : 'line')}
               isActive={prop.section === 'hero' ? true : false}
               scrollToSelector="section#hero"
               closeNav={collapseNav}
             />
             <NavItem 
-              title="Why we built ToGather"
+              // title="Why we built ToGather"
+              title="About Us"
               subtitle="Our vision, mision, & core values"
-              icon="mingcute:target-fill"
+              icon={"mingcute:target-"+(prop.section === 'purpose' ? 'fill' : 'line')}
               isActive={prop.section === 'purpose' ? true : false}
               scrollToSelector="section#purpose"
               closeNav={collapseNav}
@@ -41,35 +42,40 @@ export default function Nav(prop) {
             <NavItem 
               title="Our Activities"
               subtitle="Explore our activities"
-              icon="mingcute:compass-fill"
+              icon={"mingcute:compass-"+(prop.section === 'activities' ? 'fill' : 'line')}
               isActive={prop.section === 'activities' ? true : false}
               scrollToSelector="section#activities"
               closeNav={collapseNav}
             />
-            <NavItem 
+            {/* <NavItem 
               title="Book a Demo"
               subtitle="Learn more about the features we offer"
-              icon="mingcute:mail-open-fill"
+              icon={"mingcute:mail-open-"+(prop.section === 'demo-card' ? 'fill' : 'line')}
               isActive={prop.section === 'demo-card' ? true : false}
               scrollToSelector="#description42"
               closeNav={collapseNav}
-            />
-            <NavItem 
-              title="How we make a Difference"
+            /> */}
+            {/* <NavItem 
+              title="Our Impact"
               subtitle="Learn how we can make a difference"
-              icon="mingcute:hand-heart-fill"
+              icon={"mingcute:hand-heart-"+(prop.section === 'impact' ? 'fill' : 'line')}
               isActive={prop.section === 'impact' ? true : false}
               scrollToSelector="section#impact"
               closeNav={collapseNav}
-            />
+            /> */}
             <NavItem 
-              title="Donations & Sponsorships"
+              title="Support Us"
               subtitle="Support our mission"
-              icon="mingcute:heart-hand-fill"
+              icon={"mingcute:heart-hand-"+(prop.section === 'donation' ? 'fill' : 'line')}
               isActive={prop.section === 'donation' ? true : false}
               scrollToSelector="section#donation"
               closeNav={collapseNav}
             />
+          </div>
+          <div className="extra-actions">
+            <button onClick={()=>{
+              document.querySelector('.modal-overlay').classList.remove('hidden')
+            }}>Book a Demo</button>
           </div>
         </nav>
     )

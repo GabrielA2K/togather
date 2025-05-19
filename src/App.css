@@ -292,3 +292,108 @@ section > img {
 #feature-sponsor-donate-section {
   display: none;
 } */
+
+
+
+
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  z-index: 99;
+}
+.modal-card {
+  width: 48rem;
+  border-radius: var(--card-radius);
+  background-color: #ffffff;
+  left: 0;
+  right: 0;
+  margin: auto;
+  overflow: hidden;
+}
+
+.modal-card > header {
+  /* background-color: red; */
+  /* height: 5rem; */
+  background: linear-gradient(90deg, #40A3FF 0%, #66E086 100%);
+  padding: 1.5rem 2rem;
+  text-align: left;
+}
+
+.modal-card > header p.title {
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.modal-card > header p.description {
+  color: #ffffff;
+  opacity: 0.75;
+}
+
+.modal-card > main {
+  /* background-color: red; */
+  /* height: 20rem; */
+  width: 100%;
+  padding: 2rem;
+  /* padding-bottom: 4rem; */
+  text-align: left;
+}
+
+.modal-card > main p.body-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.modal-card > main p.body-description {
+  /* font-size: 1.6rem; */
+  /* font-weight: 500; */
+  margin-top: 0.2rem;
+  opacity: 0.75;
+}
+
+.modal-card > main form {
+  margin-top: 1.6rem;
+  display: grid;
+  /* background-color: red; */
+  width: 100%;
+  grid-template-columns: repeat(auto-fit,minmax(16rem,1fr));
+  gap: 2rem 1rem;
+}
+
+.modal-card > main form p.input-name {
+  font-weight: 500;
+}
+
+.modal-card > main form input {
+  margin-top: 0.5rem;
+  border: #28282836 1px solid;
+  border-radius: 0.6rem;
+  padding: 0.8rem 1rem;
+  width: 100%;
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+button.cancel {
+  background-color: transparent;
+  color: #282828;
+  border: #2828283b 1px solid;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+button.submit {
+  background-color: #2294FF;
+  color: #ffffff;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}

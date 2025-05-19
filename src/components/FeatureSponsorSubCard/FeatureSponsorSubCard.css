@@ -29,8 +29,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 1rem;
-    color: #FD5959;
-    background-color: #FDECEC;
+    color: #2294FF;
+    background-color: #ecf3fd;
   }
   
   .feature-sponsor .donate-subcard-title p.title {
@@ -49,8 +49,8 @@
 
 .feature-sponsor button.feature-sponsor {
     background-color: transparent;
-    color: #FD5959;
-    border: #FD5959 solid 1px;
+    color: #2294FF;
+    border: #2294ff28 solid 1px;
     font-weight: 400;
     font-size: 0.8rem;
     padding: 0.8rem 2rem;

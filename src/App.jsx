@@ -10,7 +10,18 @@ import Donation from "./sections/Donation/Donation";
 import Footer from "./components/Footer/Footer";
 
 import "./App.css";
+import { useForm } from "react-hook-form";
+import Joi from "joi";
+import { joiResolver } from "@hookform/resolvers/joi";
+import axios from "axios";
 
+
+const demoSchema = Joi.object({
+  full_name: Joi.string().required(),
+  organisation_name: Joi.string().required(),
+  email: Joi.string().required(),
+  phone_number: Joi.string().required(),
+});
 
 function App() {
   const [curSection, setSection] = useState("");
@@ -22,7 +33,12 @@ function App() {
   const [donationRef, donationInView] = useInView({ threshold: 0.3 });
 
   const [demoRef, demoInView] = useInView({ threshold: 0.2 });
-  const [testRef, testInView] = useInView({ threshold: 1 });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: joiResolver(demoSchema) });
 
   useEffect(() => {
     setSection((prev) => {
@@ -44,9 +60,27 @@ function App() {
       }
     });
     console.log(curSection);
-  }, [heroInView, purposeInView, activitiesInView, demoInView, impactInView, donationInView]);
+  }, [
+    heroInView,
+    purposeInView,
+    activitiesInView,
+    demoInView,
+    impactInView,
+    donationInView,
+  ]);
 
-  
+  const onSubmit = async (data) => {
+    console.log(data);
+    const response = await axios.post("http://localhost:3000/api/v1/email", {
+      full_name: data.full_name,
+      email: data.email,
+      phone_number: data.phone_number,
+      organisation_name: data.organisation_name
+    })
+    console.log(response);
+  };
+
+
   return (
     <>
       {/* Viewport Background Gradient Blur */}
@@ -54,15 +88,96 @@ function App() {
       <div className="blob b2"></div>
       <div className="blob b3"></div>
       <div className="blob b4"></div>
+      {/* End of Viewport Background Gradient Blur */}
 
       <Nav section={curSection} />
       <Hero ref={heroRef} inView={heroInView} />
       <Purpose ref={purposeRef} inView={purposeInView} />
-      <Activities ref={activitiesRef} inView={activitiesInView} demoRef={demoRef} demoInView={demoInView}/>
-      <Impact ref={impactRef} inView={impactInView} />
+      <Activities
+        ref={activitiesRef}
+        inView={activitiesInView}
+        demoRef={demoRef}
+        demoInView={demoInView}
+      />
+      {/* <Impact ref={impactRef} inView={impactInView} /> */}
       <Donation ref={donationRef} inView={donationInView} />
-      <br /><br />
+      <br />
+      <br />
       <Footer />
+
+      <div className="modal-overlay hidden">
+        <div className="modal-card">
+          <header>
+            <div className="card-title">
+              <p className="title">Schedule a Demo to See How It Works</p>
+              <p className="description">
+                Fill out the form below and our team will contact you within 24
+                hours.
+              </p>
+            </div>
+          </header>
+          <main>
+            <p className="body-title">Your Information</p>
+            <p className="body-description">
+              Tell us about yourself by providing your details below
+            </p>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="input-item">
+                <p className="input-name">Full Name</p>
+                <input
+                  type="text"
+                  placeholder="John Doe"
+                  {...register("full_name")}
+                />
+                {errors.full_name && <span>Full name is required</span>}
+              </div>
+              <div className="input-item">
+                <p className="input-name">Email Address</p>
+                <input
+                  type="text"
+                  placeholder="Doe@example.com"
+                  {...register("email")}
+                />
+                {errors.email && <span>Email is required</span>}
+              </div>
+
+              <div className="input-item">
+                <p className="input-name">Phone Number</p>
+                <input
+                  type="text"
+                  placeholder="Your Phone Number"
+                  {...register("phone_number")}
+                />
+                {errors.phone_number && <span>Phone number is required</span>}
+              </div>
+
+              <div className="input-item">
+                <p className="input-name">Organisation (Optional)</p>
+                <input
+                  type="text"
+                  placeholder="Your Organisation Name"
+                  {...register("organisation_name")}
+                />
+                {errors.organisation_name && <span>Organisation name is required</span>}
+              </div>
+
+              <button
+                className="cancel"
+                onClick={() => {
+                  document
+                    .querySelector(".modal-overlay")
+                    .classList.add("hidden");
+                }}
+              >
+                Cancel
+              </button>
+              <button className="submit" type="submit">
+                Request Demo
+              </button>
+            </form>
+          </main>
+        </div>
+      </div>
     </>
   );
 }
