@@ -34,7 +34,7 @@ export default function Hero(prop) {
                 <div className="hero-foot">
                 <p>
                     A non-profit dedicated to empowering communities, your donation helps
-                    support programs that heal, empower, and unite.
+                    support programs that empower, and unite.
                 </p>
                 <br />
                 <div className="hero-actions">

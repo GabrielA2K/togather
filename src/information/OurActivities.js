@@ -1,8 +1,8 @@
 
 export const OurActivities = [
 {
-    title: "Empowering Schools through Digitalization",
-    description: "We empower schools through digitalization, connecting the organization seamlessly.",
+    title: "Empowering Schools through Digitalisation",
+    description: "We empower schools through digitalisation, connecting the organisation seamlessly.",
     icon: "mingcute:mortarboard-fill",
     color: "#40A3FF",
     subcontent: [
@@ -21,7 +21,7 @@ export const OurActivities = [
     ]
 },
 {
-    title: "Modernizing Local Institutions",
+    title: "Modernising Local Institutions",
     description: "We support local institutions in embracing digital tools to simplify everyday processes.",
     icon: "mingcute:badge-fill",
     color: "#A186F3",
@@ -32,7 +32,7 @@ export const OurActivities = [
         },
         {
           icon: 'mingcute:calendar-line',
-          text: 'Personalized event calendars'
+          text: 'Personalised event calendars'
         },
         {
           icon: 'mingcute:notification-line',
@@ -41,8 +41,8 @@ export const OurActivities = [
     ]
 },
 {
-    title: "Supporting Societies & Organizations",
-    description: "We help groups and societies manage events and prioritize goals.",
+    title: "Supporting Societies & Organisations",
+    description: "We help groups and societies manage events and prioritise goals.",
     icon: "mingcute:group-3-fill",
     color: "#66E086",
     subcontent: [
@@ -68,7 +68,7 @@ export const OurActivities = [
     subcontent: [
         {
           icon: 'mingcute:horn-line',
-          text: 'Centralized announcements'
+          text: 'Centralised announcements'
         },
         {
           icon: 'mingcute:idcard-line',
@@ -82,7 +82,7 @@ export const OurActivities = [
 },
 {
     title: "Custom Solutions for Faith Communities",
-    description: "We work with faith-based groups to create digital platforms that support outreach and organization.",
+    description: "We work with faith-based groups to create digital platforms that support outreach and organisation.",
     icon: "mingcute:plugin-2-fill",
     color: "#FFB760",
     subcontent: [

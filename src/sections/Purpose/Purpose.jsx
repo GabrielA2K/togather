@@ -118,7 +118,7 @@ export default function Purpose(prop) {
                     <Icon icon="mingcute:chart-bar-line" width={24} />
                     </div>
                     <p className="heading">Streamline Workflows</p>
-                    <p className="description">Improve overall organizational efficiency</p>
+                    <p className="description">Improve overall organisational efficiency</p>
                 </div>
     
                 <div className="mission-item" style={{ "--color": "#66E086" }}>

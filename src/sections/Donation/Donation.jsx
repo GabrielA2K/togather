@@ -31,6 +31,7 @@ export default function Donation(prop) {
         title={feature.title}
         icon={feature.icon}
         body={feature.description}
+        link={feature.link}
       />
     );
   });

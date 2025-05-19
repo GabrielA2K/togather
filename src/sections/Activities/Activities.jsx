@@ -39,7 +39,7 @@ export default function Activities(prop) {
             <p className="f-center">
                 We help communities transition to digital-first solutions that
                 strengthen connection, improve communication, and support better
-                organization.
+                organisation.
             </p>
             {/* <img src={PeopleHero} alt="" srcSet="" className='hero-illustration' /> */}
             <br />

@@ -17,8 +17,14 @@ export default function FeatureSponsorSubCard(prop) {
           <p className="body">
             {prop.body}
           </p>
-          <button className="feature-sponsor">
-            Sponsor this Feature
+          <button className="feature-sponsor" onClick={() => {
+            window.open(
+              prop.link,
+              "_blank",
+              "noopener,noreferrer"
+            );
+          }}>
+            Sponsor this feature
           </button>
         </div>
     )
