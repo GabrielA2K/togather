@@ -127,7 +127,7 @@ function App() {
       <Footer />
 
       <div className="modal-overlay hidden">
-        <div className="modal-card">
+        {/* <div className="modal-card">
           <header>
             <div className="card-title">
               <p className="title">Schedule a Demo to See How It Works</p>
@@ -199,6 +199,85 @@ function App() {
               </button>
             </form>
           </main>
+        </div> */}
+        <div className="demo-request-modal">
+          <div className="left">
+            <header>
+              <div className="logo"></div>
+              <p className="heading">
+                Schedule a Demo to See How It Works
+              </p>
+              <p className="subheading">
+                Fill out the form below and our team will contact you within 24
+                hours.
+              </p>
+            </header>
+            <main>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="input-item">
+                  <p className="input-name">Full Name * {errors.full_name && <span className="error-message">Full name is required</span>}</p>
+                  <input
+                    type="text"
+                    placeholder="John Doe"
+                    {...register("full_name")}
+                  />
+                  
+                </div>
+                <div className="input-item">
+                  <p className="input-name">Email Address * {errors.email && <span className="error-message">Email is required</span>}</p> 
+                  <input
+                    type="text"
+                    placeholder="Doe@example.com"
+                    {...register("email")}
+                  />
+                  
+                </div>
+
+                <div className="input-item">
+                  <p className="input-name">Phone Number * {errors.phone_number && <span className="error-message">Phone number is required</span>}</p>
+                  <input
+                    type="text"
+                    placeholder="Your Phone Number"
+                    {...register("phone_number")}
+                  />
+                  
+                </div>
+
+                <div className="input-item">
+                  <p className="input-name">Organisation * {errors.organisation_name && <span className="error-message">Organisation name is required</span>}</p>
+                  <input
+                    type="text"
+                    placeholder="Your Organisation Name"
+                    {...register("organisation_name")}
+                  />
+                  
+                </div>
+
+                <div className="form-actions">
+                  <div
+                    className="cancel"
+                    onClick={() => {
+                      document
+                        .querySelector(".modal-overlay")
+                        .classList.add("hidden");
+                      setLoadState('initial'); // Reset load state
+                    }}
+                  >
+                    Close
+                  </div>
+                  <button className="submit" type="submit" disabled={loadState === 'loading' || loadState === 'finish'}>
+                    {(loadState === 'loading' ? <Icon icon={'eos-icons:three-dots-loading'} width={32}></Icon> : (loadState === 'finish') ? 'Request Sent' : 'Request Demo')}
+                    
+                  </button>
+                </div>
+                <p className="agreement">By submitting this form, you agree to our <span className="link">privacy policy</span> and <span className="link">terms of service</span>.</p>
+                
+              </form>
+            </main>
+          </div>
+          <div className="right">
+
+          </div>
         </div>
       </div>
     </>
