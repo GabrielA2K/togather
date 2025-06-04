@@ -4,6 +4,7 @@
     border-radius: var(--card-radius);
     position: relative;
     margin-bottom: 1.5rem;
+    transition: filter 500ms ease-in-out;
   }
   .activities-card::before {
     content: "";
@@ -108,3 +109,7 @@
     font-size: 0.75rem;
     opacity: 0.8;
   }
+
+  /* .activities-card:has( header[data-focused=false] ) {
+    filter: blur(0.5rem);
+  } */

@@ -1,0 +1,9 @@
+.mobdesk {
+    opacity: 0;
+    transform: scale(0.7) translateY(-50%);
+    transition: all 500ms cubic-bezier(.47,1.64,.1,.9) calc(100ms + var(--delay));
+}
+.mobdesk.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}

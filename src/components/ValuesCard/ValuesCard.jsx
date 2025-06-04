@@ -4,7 +4,7 @@ import './ValuesCard.css'
 import { useEffect } from 'react'
 
 export default function ValuesCard(prop) {
-    const [inViewRef, inView] = useInView({threshold: 1})
+    const [inViewRef, inView] = useInView({threshold: 0.9})
     useEffect(() => {
         prop.setCurrentValue(prop.id)
         // console.log(prop.id)

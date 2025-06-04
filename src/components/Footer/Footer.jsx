@@ -11,7 +11,7 @@ export default function Footer() {
             <p className="footer-description">
               A Non-Profit Dedicated to <br /> Empowering Communities
             </p>
-            <a href="#" style={{ marginRight: "0.5rem" }}>
+            <a href="https://www.linkedin.com/company/togather-c-i-c" target="_blank" style={{ marginRight: "0.5rem" }}>
               <Icon
                 icon="mingcute:linkedin-line"
                 width={24}
@@ -19,14 +19,14 @@ export default function Footer() {
                 color="rgba(255, 255, 255, 0.79)"
               />
             </a>
-            <a href="#">
+            {/* <a href="#">
               <Icon
                 icon="mingcute:facebook-line"
                 width={24}
                 height={24}
                 color="rgba(255, 255, 255, 0.79)"
               />
-            </a>
+            </a> */}
           </div>
           <div className="footer-item">
             <p className="footer-label">Legal</p>

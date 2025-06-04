@@ -438,7 +438,7 @@ button.submit[disabled] {
   display: grid;
   grid-template-columns: 1fr;
   opacity: 1;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s cubic-bezier(.47,1.64,.1,.9);
 }
 
 .demo-request-modal > .left {
@@ -739,6 +739,6 @@ span.link {
 }
 .modal-overlay.hidden .demo-request-modal {
   /* transition-delay: 100ms; */
-  transform: translateY(120%);
+  transform: scale(85%);
   opacity: 0;
 }

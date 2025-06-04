@@ -7,6 +7,7 @@ export default function ActivityCard(prop) {
   
 
     const [valueRef, valueInView] = useInView({threshold: 0.2});
+    const [valueFocus, valueFocusInView] = useInView({threshold: 0.9});
 
     const subcontentMap =
         prop.subcontent.map((item, index) => {
@@ -25,7 +26,7 @@ export default function ActivityCard(prop) {
 
     return (
         <div ref={valueRef} key={prop.id} className={"activities-card from-left"+(valueInView?' visible':'')} style={{'--color': prop.color}}>
-          <header>
+          <header ref={valueFocus} data-focused={valueFocusInView? 'true' : 'false'} className="activity-header">
             <div className="activity-title-container">
               <div className="icon-container">
                 <Icon icon={prop.icon} width={24} color='#ffffff' />

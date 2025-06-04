@@ -1,14 +1,19 @@
 
 .demo-card {
-    background-color: #EFF6FF;
+    background-color: #ffffff;
     width: 100%;
     border-radius: var(--card-radius);
     position: relative;
     margin-bottom: 1.5rem;
     padding-inline: 2rem;
     padding-block: 2.5rem;
+    padding-bottom: 2rem;
     border-radius: var(--card-radius);
     border: #40a3ff74 solid 1px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   /* .demo-card::before {
     content: "";
@@ -35,7 +40,7 @@
   
   .demo-card > button {
     background-color: var(--color);
-    margin-top: 1.5rem;
+    margin-top: 3rem;
     width: 100%;
     font-weight: 400;
     font-size: 1rem;

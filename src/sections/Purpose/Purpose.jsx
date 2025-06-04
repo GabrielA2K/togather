@@ -1,12 +1,14 @@
 
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import TextTag from "../../components/TextTag/TextTag";
 import ValuesCard from "../../components/ValuesCard/ValuesCard";
+import MissionPlatformItem from "../../components/MissionPlatformItem/MissionPlatformItem";
 
 import { CoreValues } from "../../information/CoreValues";
+import { MissionPlatforms } from "../../information/MissionPlatforms";
 
 import './Purpose.css';
 
@@ -37,7 +39,7 @@ export default function Purpose(prop) {
           <p
             key={key}
             className={
-              "text-block block" + key + " " + (curValue === key ? " focused" : "")
+              "text-block" + (curValue === key ? " focused" : "")
             }
             style={{ "--color": value.color }}
             onClick={() => {
@@ -53,7 +55,23 @@ export default function Purpose(prop) {
         );
     });
 
+    const missionPlatformsMap = MissionPlatforms.map((platform, index) => {
 
+        return (
+            <MissionPlatformItem
+                index={index}
+                title={platform.title}
+                color={platform.color}
+                icon={platform.icon}
+                description={platform.description}
+            />
+            
+        );
+    })
+
+    useEffect(() => {
+        setValue(0); // Force select first on load
+    }, []);
 
     return (
         <>
@@ -105,45 +123,7 @@ export default function Purpose(prop) {
                 Our platform is designed to
                 </p>
                 <div className="mission-list">
-                <div className="mission-item" style={{ "--color": "#40A3FF" }}>
-                    <div className="icon-wrapper">
-                    <Icon icon="mingcute:link-2-line" width={24} />
-                    </div>
-                    <p className="heading">Strengthen Connections</p>
-                    <p className="description">Foster collaboration within communities</p>
-                </div>
-    
-                <div className="mission-item" style={{ "--color": "#A186F3" }}>
-                    <div className="icon-wrapper">
-                    <Icon icon="mingcute:chart-bar-line" width={24} />
-                    </div>
-                    <p className="heading">Streamline Workflows</p>
-                    <p className="description">Improve overall organisational efficiency</p>
-                </div>
-    
-                <div className="mission-item" style={{ "--color": "#66E086" }}>
-                    <div className="icon-wrapper">
-                    <Icon icon="mingcute:shield-shape-line" width={24} />
-                    </div>
-                    <p className="heading">Uphold Safeguarding</p>
-                    <p className="description">Ensure accountability through digital tools</p>
-                </div>
-    
-                <div className="mission-item" style={{ "--color": "#FD5959" }}>
-                    <div className="icon-wrapper">
-                    <Icon icon="mingcute:group-line" width={24} />
-                    </div>
-                    <p className="heading">Ensure Accessibility</p>
-                    <p className="description">Create inclusivity for diverse communities</p>
-                </div>
-    
-                <div className="mission-item" style={{ "--color": "#FFB760" }}>
-                    <div className="icon-wrapper">
-                    <Icon icon="mingcute:bulb-2-line" width={24} />
-                    </div>
-                    <p className="heading">Enable Sustainability</p>
-                    <p className="description">Through adaptive training & technology</p>
-                </div>
+                    {missionPlatformsMap}
                 </div>
             </div>
     
