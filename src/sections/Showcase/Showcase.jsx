@@ -6,7 +6,6 @@ import TextTag from "../../components/TextTag/TextTag";
 
 import './Showcase.css';
 
-import GemsVideo from '../../assets/videos/gems.mp4';
 import AnnouncementInteraction from '../../assets/videos/1. Announcement Interactions (New).mp4';
 import EventAttendance from '../../assets/videos/2. Events & Attendance (New).mp4';
 import FamilyManagement from '../../assets/videos/3. Family Management (New).mp4';
