@@ -7,6 +7,7 @@ import Hero from "./sections/Hero/Hero";
 import Purpose from "./sections/Purpose/Purpose";
 import Activities from "./sections/Activities/Activities";
 import Impact from "./sections/Impact/Impact";
+import Showcase from "./sections/Showcase/Showcase";
 import Donation from "./sections/Donation/Donation";
 import Footer from "./components/Footer/Footer";
 
@@ -120,7 +121,9 @@ function App() {
         demoRef={demoRef}
         demoInView={demoInView}
       />
+      
       {/* <Impact ref={impactRef} inView={impactInView} /> */}
+      <Showcase />
       <Donation ref={donationRef} inView={donationInView} />
       <br />
       <br />
